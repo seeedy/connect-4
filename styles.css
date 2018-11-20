@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: white;
+    font-family: "Stalinist One", cursive;
+    border-bottom: 20px solid white;
+    font-size: 38px;
+}
+
+/* .column {
+    width: 80px;
+} */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 4px -4px gray;
+}
+
+/* .slot {
+    postion: relative;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.hole {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: white;
+    z-index: 0;
+} */
+
+.top {
+    width: 80px;
+    height: 80px;
+}
+
+.select-column {
+    animation-name: select;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes select {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.slot {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index: 10; */
+}
+.hole {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    border: 5px blue solid;
+    box-shadow: 0 0 0 500px blue;
+}
+
+.player1 {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background: radial-gradient(red, #8e1c0f);
+    z-index: -1;
+}
+
+.player2 {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background: radial-gradient(#32b512, #165108);
+    z-index: -1;
+}
+
+#overlay-win {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(100, 100, 100, 0.3);
+    transform: translateY(-100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Stalinist One", cursive;
+}
+
+/* .win-on {
+    transform: translateY(0);
+} */
+
+.win-msg {
+    width: 100%;
+    height: 200px;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    transform: translateY(-1000px);
+}
+
+.next {
+    color: white;
+    border: 1px solid white;
+    background: black;
+    padding: 20px;
+    border-radius: 2px;
+}
+
+.next:hover {
+    border: 1px solid black;
+    color: black;
+    background: white;
+}
+
+a {
+    text-decoration: none;
+    font-size: 28px;
+}
+
+.drop-chip {
+    animation-name: drop;
+    animation-duration: 2500ms;
+}
+
+@keyframes drop {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(600px);
+    }
+}
+
+#player1-score {
+    height: 480px;
+    width: 250px;
+    padding-top: 80px;
+    font-family: "Stalinist One", cursive;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+#player2-score {
+    height: 480px;
+    width: 250px;
+    padding-top: 80px;
+    padding-left: 50px;
+    font-family: "Stalinist One", cursive;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}

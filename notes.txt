@@ -1,0 +1,35 @@
+selection on "click"
+
+7 x 6 = 42 slots
+
+select column --> piece goes to lowest free slot
+
+after piece dropped --> check victory condition, show msg on win --> possibility to restart
+
+1. HTML/CSS
+- individual slot
+	* square elem with circular elem in it
+	* a class on slot indicates the player who has claimed the spot and styles the circle accordingly
+- board as whole 
+	* by column: 7 elem containing 6 slots (easiest to define which column was selected by user!)
+	* by row: 6 elem containing 7 slots
+	* all 42 slots in a single element (grid layout)
+
+2. Javascript
+- keep track of current player
+- column selection
+	* determine which slot in the column to put current players slot 
+	* backwards loop
+- check for victory
+	* vertically
+	* horizontally
+	* diagonally
+	* only check for current player
+- show victory message (impossible to play during msg, possible to restart
+- switch players
+
+
+function getOneDiagInX(col, row) {
+	col -= 3;
+	row -= 3;
+	var elem = $(".column:nth-child(" + (col + 1) +") .slot:nth-child
